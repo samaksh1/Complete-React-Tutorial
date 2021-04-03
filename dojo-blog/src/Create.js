@@ -11,7 +11,7 @@ const Create = () => {
     e.preventDefault();
     const blog = { title, body, author };
 
-    fetch('http://localhost:8000/blogs/', {
+    fetch('http://localhost:3000/blogs/', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blog)
@@ -26,9 +26,9 @@ const Create = () => {
       <h2>Add a New Blog</h2>
       <form onSubmit={handleSubmit}>
         <label>Blog title:</label>
-        <input 
-          type="text" 
-          required 
+        <input
+          type="text"
+          required
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
@@ -51,5 +51,5 @@ const Create = () => {
     </div>
   );
 }
- 
+
 export default Create;
